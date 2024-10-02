@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="icon" href="SUPERSET.png"> <!-- This sets the favicon -->
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: url('jms.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            width: 420px;
+            padding: 0;
+            transition: all 0.3s ease;
+        }
+
+        .login-container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .login-header {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .login-header i {
+            font-size: 4rem;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .login-form {
+            padding: 40px;
+        }
+
+        .form-floating {
+            margin-bottom: 25px;
+        }
+
+        .form-control {
+            border-radius: 50px;
+            padding-left: 50px;
+            height: 50px; /* Increase height */
+            font-size: 1.2rem; /* Increase font size */
+        }
+
+        .input-group-text {
+            background-color: #f4f4f4;
+            border: none;
+            border-radius: 50px;
+            padding-left: 20px;
+            padding-right: 20px;
+            font-size: 1.2rem; /* Increase font size */
+            height: 50px; /* Match height with input field */
+        }
+
+        .form-control:focus {
+            border-color: #27ae60;
+            box-shadow: 0 0 5px rgba(39, 174, 96, 0.5);
+        }
+
+        .btn-login {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            border: none;
+            color: white;
+            font-weight: 600;
+            padding: 12px 25px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            height: 50px; /* Increase button height */
+            font-size: 1.2rem; /* Increase button font size */
+        }
+
+        .btn-login:hover {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .forgot-password {
+            text-align: right;
+            font-size: 0.85rem;
+            margin-top: 15px;
+        }
+
+        .forgot-password a {
+            text-decoration: none;
+            color: #3498db;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+        .icon-large {
+            font-size: 5rem; /* Increase the icon size */
+        }
+        
+        .header-large {
+            font-size: 2.5rem; /* Increase the heading size */
+            margin-top: 10px; /* Add some space above the heading */
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <i class="fas fa-user-shield icon-large"></i> <!-- Added class for larger icon -->
+            <h2 class="header-large">Admin Login</h2> <!-- Added class for larger heading -->
+        </div>        
+        <div class="login-form">
+            <form action="#" method="POST">
+                <!-- Email with Icon -->
+                <div class="input-group mb-4">
+                    <span class="input-group-text">
+                        <i class="fas fa-envelope text-secondary"></i>
+                    </span>
+                    <input type="email" class="form-control" id="emailInput" placeholder="Email address" required>
+                </div>
+
+                <!-- Password with Icon -->
+                <div class="input-group mb-4">
+                    <span class="input-group-text">
+                        <i class="fas fa-lock text-secondary"></i>
+                    </span>
+                    <input type="password" class="form-control" id="passwordInput" placeholder="Password" required>
+                </div>
+
+                <!-- Remember Me Checkbox -->
+                <div class="form-check mb-4">
+                    <input class="form-check-input" type="checkbox" id="rememberMe">
+                    <label class="form-check-label" for="rememberMe">
+                        Remember me
+                    </label>
+                </div>
+
+                <!-- Login Button -->
+                <button type="submit" class="btn btn-login w-100">Login</button>
+            </form>
+
+            <!-- Forgot Password -->
+            <div class="forgot-password mt-3">
+                <a href="#">Forgot password?</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

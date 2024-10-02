@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Placement Portal</title>
+    <link rel="icon" href="SUPERSET.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card {
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        /* Profile image circle */
+.profile-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  /* Dropdown container */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Hidden dropdown content */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Show dropdown on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+    </style>
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between">
+                <div class="flex space-x-7">
+                    <div>
+                        <a href="#" class="flex items-center py-4 px-2">
+                            <img src="super.png" alt="Logo" class="h-16 w-17 mr-2"> <!-- Increased to h-16 w-16 -->
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-3">
+                    <a href="#" class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-blue-500 hover:text-white transition duration-300">Dashboard</a>
+                    <a href="#" class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-blue-500 hover:text-white transition duration-300">Manage Jobs</a>
+                    <a href="#" class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-blue-500 hover:text-white transition duration-300">Applications</a>
+                    
+                    <!-- Circular Profile Image -->
+                    <div class="relative">
+                        <img src="bunny.jpg" class="w-18 h-14 rounded-full border-2 border-white cursor-pointer" alt="Profile Image" id="profileDropdownBtn">
+                
+                        <!-- Dropdown Menu -->
+                        <div id="profileDropdown" class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 hidden">
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Update Profile</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Update Password</a>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="py-2 px-2 font-medium text-white bg-blue-500 rounded hover:bg-blue-400 transition duration-300">Logout</a>
+                </div>
+                
+                <div class="md:hidden flex items-center">
+                    <button class="outline-none mobile-menu-button">
+                        <svg class="w-6 h-6 text-gray-500 hover:text-blue-500"
+                            fill="none" stroke-linecap="round" 
+                            stroke-linejoin="round" stroke-width="2" 
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="hidden mobile-menu">
+            <ul class="">
+                <li><a href="#" class="block text-sm px-2 py-4 hover:bg-blue-500 transition duration-300">Dashboard</a></li>
+                <li><a href="#" class="block text-sm px-2 py-4 hover:bg-blue-500 transition duration-300">Manage Jobs</a></li>
+                <li><a href="#" class="block text-sm px-2 py-4 hover:bg-blue-500 transition duration-300">Applications</a></li>
+                <li><a href="#" class="block text-sm px-2 py-4 hover:bg-blue-500 text-white">Logout</a></li>
+                <li>
+                    <div class="dropdown">
+                      <img src="image.png" class="profile-image" alt="Profile Image">
+                      <div class="dropdown-content">
+                        <a href="#">Update Profile</a>
+                        <a href="#">Update Password</a>
+                      </div>
+                    </div>
+                  </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="gradient-bg text-white py-16">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl font-bold mb-4">Company Placement Portal</h1>
+            <p class="text-xl">Streamline your recruitment process and manage applications efficiently</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto my-12 px-4">
+        <section class="mb-12">
+            <h2 class="text-3xl font-semibold mb-6">Company Metrics</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-lg shadow-md p-6 card">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-medium text-gray-700">Total Job Listings</h3>
+                        <span class="text-blue-500 bg-blue-100 rounded-full p-2">
+                            <i class="fas fa-briefcase"></i>
+                        </span>
+                    </div>
+                    <p class="text-3xl font-bold text-gray-800">25</p>
+                    <p class="text-sm text-gray-500 mt-2">5% increase from last month</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 card">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-medium text-gray-700">Active Listings</h3>
+                        <span class="text-green-500 bg-green-100 rounded-full p-2">
+                            <i class="fas fa-check-circle"></i>
+                        </span>
+                    </div>
+                    <p class="text-3xl font-bold text-gray-800">12</p>
+                    <p class="text-sm text-gray-500 mt-2">2 new listings this week</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 card">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-medium text-gray-700">Total Applications</h3>
+                        <span class="text-purple-500 bg-purple-100 rounded-full p-2">
+                            <i class="fas fa-users"></i>
+                        </span>
+                    </div>
+                    <p class="text-3xl font-bold text-gray-800">356</p>
+                    <p class="text-sm text-gray-500 mt-2">45 new applications today</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 card">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-medium text-gray-700">Interviews Scheduled</h3>
+                        <span class="text-yellow-500 bg-yellow-100 rounded-full p-2">
+                            <i class="fas fa-calendar-check"></i>
+                        </span>
+                    </div>
+                    <p class="text-3xl font-bold text-gray-800">45</p>
+                    <p class="text-sm text-gray-500 mt-2">10 interviews this week</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-3xl font-semibold mb-6">Application Trends</h2>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <canvas id="applicationChart"></canvas>
+            </div>
+        </section>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <section>
+                <h2 class="text-3xl font-semibold mb-6">Recent Applications</h2>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <ul class="divide-y divide-gray-200">
+                        <li class="p-4 hover:bg-gray-50 transition duration-300">
+                            <div class="flex items-center space-x-4">
+                                <div class="flex-shrink-0">
+                                    <img src="harsha.jpeg" alt="Applicant" style="height: 64px; width: 70px; border-radius: 50%;">
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-sm font-medium text-gray-900 truncate">
+                                        Harsha applied for <strong>Software Engineer</strong>
+                                    </p>
+                                    <p class="text-sm text-gray-500 truncate">
+                                        Applied 2 hours ago
+                                    </p>
+                                </div>
+                                <div>
+                                    <a href="#" class="inline-flex items-center shadow-sm px-2.5 py-0.5 border border-gray-300 text-sm leading-5 font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50">
+                                        View
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="p-4 hover:bg-gray-50 transition duration-300">
+                            <div class="flex items-center space-x-4">
+                                <div class="flex-shrink-0">
+                                    <img src="sandeep.jpeg" alt="Applicant" style="height: 64px; width: 70px; border-radius: 50%;" >
+                                </div>    
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-sm font-medium text-gray-900 truncate">
+                                        Sandeep applied for <strong>Data Analyst</strong>
+                                    </p>
+                                    <p class="text-sm text-gray-500 truncate">
+                                        Applied 5 hours ago
+                                    </p>
+                                </div>
+                                <div>
+                                    <a href="#" class="inline-flex items-center shadow-sm px-2.5 py-0.5 border border-gray-300 text-sm leading-5 font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50">
+                                        View
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="p-4 hover:bg-gray-50 transition duration-300">
+                            <div class="flex items-center space-x-4">
+                                <div class="flex-shrink-0">
+                                    <img src="sanjay.jpeg" alt="Applicant" style="height: 64px; width: 64px; border-radius: 50%;">
+                                </div>                                
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-sm font-medium text-gray-900 truncate">
+                                        Sanjay applied for <strong>Product Manager</strong>
+                                    </p>
+                                    <p class="text-sm text-gray-500 truncate">
+                                        Applied 1 day ago
+                                    </p>
+                                </div>
+                                <div>
+                                    <a href="#" class="inline-flex items-center shadow-sm px-2.5 py-0.5 border border-gray-300 text-sm leading-5 font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50">
+                                        View
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="text-3xl font-semibold mb-6">Upcoming Drives</h2>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <ul class="divide-y divide-gray-200">
+                        <li class="p-4 hover:bg-gray-50 transition duration-300">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <h3 class="text-lg font-medium text-gray-900">Campus Recruitment Drive</h3>
+                                    <p class="text-sm text-gray-500">Oct 20, 2024</p>
+                                </div>
+                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                    Upcoming
+                                </span>
+                            </div>
+                        </li>
+                        <li class="p-4 hover:bg-gray-50 transition duration-300">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <h3 class="text-lg font-medium text-gray-900">Hackathon Participation</h3>
+                                    <p class="text-sm text-gray-500">Nov 15, 2024</p>
+                                </div>
+                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
+                                    Planning
+                                </span>
+                            </div>
+                        </li>
+                        <li class="p-4 hover:bg-gray-50 transition duration-300">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <h3 class="text-lg font-medium text-gray-900">Internship Drive</h3>
+                                    <p class="text-sm text-gray-500">Dec 10, 2024</p>
+                                </div>
+                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">
+                                    Confirmed
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-between items-center">
+                <div class="w-full md:w-1/3 text-center md:text-left">
+                    <h3 class="text-lg font-semibold mb-2">Company Placement Portal</h3>
+                </div>
+                <div class="w-full md:w-1/3 text-center md:text-left">
+                    <p class="mb-0"><b>&copy; 2024 Superset. All rights reserved.</b></p>
+                </div>
+                <div class="w-full md:w-1/3 text-center my-4 md:my-0">
+                    <ul class="inline-flex space-x-4">
+                        <li><a href="#" class="hover:text-blue-400 transition duration-300 />
+                            <ul class="inline-flex space-x-4"></a>
+                        <li><a href="#" class="hover:text-blue-400 transition duration-300">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition duration-300">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition duration-300">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-button').addEventListener('click', function () {
+            document.querySelector('.mobile-menu').classList.toggle('hidden');
+        });
+
+        // Application Trends Chart
+        var ctx = document.getElementById('applicationChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Applications',
+                    data: [65, 59, 80, 81, 56, 55],
+                    fill: false,
+                    borderColor: 'rgb(75, 192, 192)',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+    <script>
+    const profileDropdownBtn = document.getElementById('profileDropdownBtn');
+    const profileDropdown = document.getElementById('profileDropdown');
+
+    // Toggle dropdown visibility on image click
+    profileDropdownBtn.addEventListener('click', () => {
+        profileDropdown.classList.toggle('hidden');
+    });
+
+    // Close dropdown if clicked outside
+    window.addEventListener('click', (e) => {
+        if (!profileDropdownBtn.contains(e.target) && !profileDropdown.contains(e.target)) {
+            profileDropdown.classList.add('hidden');
+        }
+    });
+</script>
+</body>
+</html>
